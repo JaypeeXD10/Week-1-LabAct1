@@ -1,0 +1,68 @@
+<?php
+
+// Person Class
+class Person {
+    public $firstName;
+    public $lastName;
+    private $age;
+
+    // Constructor to initialize the properties
+    public function __construct($firstName, $lastName, $age) {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->age = $age;
+    }
+
+    // Method to return the full name of the person
+    public function getFullName() {
+        return "Full Name: " . $this->firstName . " " . $this->lastName;
+    }
+
+    // Method to set the age
+    public function setAge($age) {
+        $this->age = $age;
+    }
+
+    // Method to return the age
+    public function getAge() {
+        return "Age: " . $this->age;
+    }
+}
+
+// Car Class
+class Car {
+    public $make;
+    public $model;
+    protected $year;
+
+    // Constructor to initialize the properties
+    public function __construct($make, $model, $year) {
+        $this->make = $make;
+        $this->model = $model;
+        $this->year = $year;
+    }
+
+    // Method to return car information
+    public function getCarInfo() {
+        return "Car Info: " . $this->make . " " . $this->model . " (" . $this->year . ")";
+    }
+}
+
+// Create an instance of the Person class
+$person = new Person("John", "Doe", 25);
+
+// Display the person's full name and age
+echo $person->getFullName() . "\n";
+echo $person->getAge() . "\n";
+
+// Update the age
+$person->setAge(26);
+echo "Updated " . $person->getAge() . "\n";
+
+// Create an instance of the Car class
+$car = new Car("Toyota", "Camry", 2020);
+
+// Display the car's information
+echo $car->getCarInfo() . "\n";
+
+?>
